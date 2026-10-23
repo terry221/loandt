@@ -5,25 +5,32 @@ on:
     branches:
       - main
 
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Show Files
+      - uses: actions/checkout@v4
+
+      - name: Debug Files
         run: |
+          echo "Current directory:"
           pwd
+
+          echo "Files:"
           ls -la
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+          echo "Searching package.json:"
+          find . -name "package.json"
+
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install
 
-      - name: Build application
+      - name: Build
         run: npm run build

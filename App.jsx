@@ -7,7 +7,6 @@ const sampleLoanData = {
   address: "DLF Downtown, Gurugram, Haryana 122002",
   mortgaged_property_address: "Sector 65, Gurugram, Haryana 122018",
   sanctioned_tenure: 180,
-  current_tenure: 24,
   prime_lending_rate: 12.5,
   spread_at_loan_sanction: -3.75,
   first_disbursal_date: "2024-07-12",
